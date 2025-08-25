@@ -12,24 +12,24 @@ def run_command(command, description):
     print(f"\n🔄 {description}...")
     try:
         result = subprocess.run(command, shell=True, check=True, capture_output=True, text=True)
-        print(f"✅ {description} completado")
+        print(f" {description} completado")
         return True
     except subprocess.CalledProcessError as e:
-        print(f"❌ Error en {description}: {e.stderr}")
+        print(f" Error en {description}: {e.stderr}")
         return False
 
 def check_python_version():
     """Check Python version"""
     version = sys.version_info
     if version.major != 3 or version.minor < 8:
-        print("❌ Se requiere Python 3.8 o superior")
+        print(" Se requiere Python 3.8 o superior")
         return False
-    print(f"✅ Python {version.major}.{version.minor}.{version.micro} detectado")
+    print(f" Python {version.major}.{version.minor}.{version.micro} detectado")
     return True
 
 def setup_environment():
     """Setup Python environment"""
-    print("🚀 Configurando entorno de CatchAI Document Copilot...\n")
+    print(" Configurando entorno de CatchAI Document Copilot...\n")
     
     # Check Python version
     if not check_python_version():
@@ -63,19 +63,19 @@ def setup_environment():
         if Path(".env.example").exists():
             run_command("copy .env.example .env" if os.name == 'nt' else "cp .env.example .env", 
                        "Creando archivo .env")
-            print("\n⚠️  IMPORTANTE: Edita el archivo .env y añade tu OPENAI_API_KEY")
+            print("\n  IMPORTANTE: Edita el archivo .env y añade tu OPENAI_API_KEY")
         else:
-            print("❌ Archivo .env.example no encontrado")
+            print(" Archivo .env.example no encontrado")
             return False
     
     # Create data directory
     Path("data").mkdir(exist_ok=True)
-    print("✅ Directorio de datos creado")
+    print(" Directorio de datos creado")
     
     print(f"""
-🎉 ¡Configuración completada!
+¡Configuración completada!
 
-📋 Próximos pasos:
+Próximos pasos:
 1. Edita el archivo .env y añade tu OPENAI_API_KEY
 2. Activa el entorno virtual:
    - Windows: {activate_script}
@@ -84,7 +84,7 @@ def setup_environment():
    - streamlit run src/frontend/app.py
    - O usa Docker: docker-compose up
 
-🌐 La aplicación estará disponible en: http://localhost:8501
+La aplicación estará disponible en: http://localhost:8501
 """)
     
     return True
@@ -92,15 +92,15 @@ def setup_environment():
 def main():
     """Main setup function"""
     if len(sys.argv) > 1 and sys.argv[1] == "--docker":
-        print("🐳 Configuración para Docker...")
+        print(" Configuración para Docker...")
         
         # Check if Docker is installed
         if not run_command("docker --version", "Verificando Docker"):
-            print("❌ Docker no está instalado. Por favor instala Docker y Docker Compose.")
+            print(" Docker no está instalado. Por favor instala Docker y Docker Compose.")
             return False
         
         if not run_command("docker-compose --version", "Verificando Docker Compose"):
-            print("❌ Docker Compose no está instalado.")
+            print(" Docker Compose no está instalado.")
             return False
         
         # Create .env file
@@ -109,9 +109,9 @@ def main():
                        "Creando archivo .env")
         
         print("""
-🐳 Configuración de Docker completada!
+ Configuración de Docker completada!
 
-📋 Para ejecutar con Docker:
+ Para ejecutar con Docker:
 1. Edita el archivo .env y añade tu OPENAI_API_KEY
 2. Ejecuta: docker-compose up -d
 3. Accede a: http://localhost:8501
