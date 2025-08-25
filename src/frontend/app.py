@@ -93,7 +93,7 @@ def initialize_session_state():
 # Validation functions
 def validate_api_key():
     """Validate OpenAI API key"""
-    if not config.OPENAI_API_KEY or config.OPENAI_API_KEY == "your_openai_api_key_here":
+    if not config.OPENAI_API_KEY or config.OPENAI_API_KEY == "openai-key":
         st.error("⚠️ Por favor configura tu OPENAI_API_KEY en el archivo .env")
         st.info("1. Copia .env.example a .env\n2. Añade tu API key de OpenAI\n3. Reinicia la aplicación")
         return False
