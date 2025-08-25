@@ -98,7 +98,7 @@ Consulta Usuario → Embedding → Búsqueda Semántica → Contexto Relevante �
 - **User Prompt**: Pregunta del usuario
 - **Memory**: Mantiene historial conversacional
 
-## 💡 Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 ### Requisitos Mínimos
 - [x] Subida de hasta 5 PDFs
