@@ -195,9 +195,3 @@ python -m pytest tests/ --cov=src --cov-report=html
 - Precisión de búsqueda semántica
 - Uso de tokens y costos
 - Satisfacción del usuario
-
----
-
-**Desarrollado por**: [Tu Nombre]  
-**Para**: CatchAI Technical Challenge  
-**Fecha**: Agosto 2025
