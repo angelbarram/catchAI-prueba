@@ -1,10 +1,10 @@
 # CatchAI - Copiloto Conversacional sobre Documentos
 
-## 🎯 Descripción del Proyecto
+## Descripción del Proyecto
 
 Copiloto conversacional que permite subir hasta 5 archivos PDF y hacer preguntas en lenguaje natural sobre su contenido. Utiliza RAG (Retrieval Augmented Generation) con orquestación clara y extensible.
 
-## 🏗️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -27,7 +27,7 @@ Copiloto conversacional que permite subir hasta 5 archivos PDF y hacer preguntas
 4. **Interfaz de Usuario**: Frontend interactivo con Streamlit
 5. **API Backend**: FastAPI para endpoints RESTful
 
-## 🛠️ Stack Tecnológico
+## Stack Tecnológico
 
 - **Orquestación**: LangChain para RAG y chain management
 - **LLM**: OpenAI GPT-4o-mini (cost-effective y potente)
@@ -38,7 +38,7 @@ Copiloto conversacional que permite subir hasta 5 archivos PDF y hacer preguntas
 - **Backend**: FastAPI (opcional, para arquitectura modular)
 - **Containerización**: Docker + docker-compose
 
-## 🚀 Instrucciones de Instalación
+## Instrucciones de Instalación
 
 ### Opción 1: Docker (Recomendado)
 
@@ -78,7 +78,7 @@ cp .env.example .env
 streamlit run src/frontend/app.py
 ```
 
-## 🔄 Flujo Conversacional
+## Flujo Conversacional
 
 ### 1. Carga de Documentos
 - Usuario sube hasta 5 PDFs
@@ -100,13 +100,13 @@ Consulta Usuario → Embedding → Búsqueda Semántica → Contexto Relevante �
 
 ## 💡 Funcionalidades Implementadas
 
-### ✅ Requisitos Mínimos
+### Requisitos Mínimos
 - [x] Subida de hasta 5 PDFs
 - [x] Extracción y vectorización de contenido
 - [x] Interfaz conversacional
 - [x] Orquestación estructurada y extensible
 
-### 🌟 Funcionalidades Adicionales
+### Funcionalidades Adicionales
 - [x] Resumen automático de documentos
 - [x] Comparaciones entre documentos
 - [x] Clasificación por temas
@@ -114,7 +114,7 @@ Consulta Usuario → Embedding → Búsqueda Semántica → Contexto Relevante �
 - [x] Métricas de relevancia
 - [x] Interfaz responsive
 
-## 🔧 Configuración
+## Configuración
 
 ### Variables de Entorno (.env)
 ```
@@ -125,7 +125,7 @@ CHUNK_SIZE=1000
 CHUNK_OVERLAP=200
 ```
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 catchai_prueba_tecnica/
@@ -148,21 +148,21 @@ catchai_prueba_tecnica/
 └── README.md
 ```
 
-## 🎮 Casos de Uso
+## Casos de Uso
 
 1. **Análisis de Documentos**: "Resume los puntos principales de todos los documentos"
 2. **Búsqueda Específica**: "¿Qué dice sobre inteligencia artificial?"
 3. **Comparaciones**: "¿Cuáles son las diferencias entre el documento 1 y 3?"
 4. **Extracción de Datos**: "Lista todas las fechas mencionadas"
 
-## 🚧 Limitaciones Actuales
+## Limitaciones Actuales
 
 - Máximo 5 PDFs por sesión
 - Solo texto (no imágenes ni tablas complejas)
 - Contexto limitado por window del LLM
 - Dependencia de OpenAI API
 
-## 🛣️ Roadmap de Mejoras
+## Roadmap de Mejoras
 
 ### Corto Plazo
 - [ ] Soporte para más formatos (DOCX, TXT)
@@ -179,7 +179,7 @@ catchai_prueba_tecnica/
 - [ ] Integración con APIs externas
 - [ ] Fine-tuning de modelos específicos
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Ejecutar tests
@@ -189,7 +189,7 @@ python -m pytest tests/ -v
 python -m pytest tests/ --cov=src --cov-report=html
 ```
 
-## 📈 Métricas y Monitoreo
+## Métricas y Monitoreo
 
 - Tiempo de respuesta de consultas
 - Precisión de búsqueda semántica
